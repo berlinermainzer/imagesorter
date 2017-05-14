@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d{HH:mm:ss.SSS}] %-5level - %msg%n" />
+		</Console>
+		<File name="alllogger" fileName="all.log" immediateFlush="true" append="true">
+			<PatternLayout pattern="[%d{HH:mm:ss.SSS}] %-5level - %msg%n" />
+		</File>
+		<File name="errorlogger" fileName="error.log" immediateFlush="true" append="true">
+			<PatternLayout pattern="[%d{HH:mm:ss.SSS}] %-5level - %msg%n" />
+		</File>
+	</Appenders>
+	<Loggers>
+		<root level="INFO">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="alllogger" level="info"/>
+			<AppenderRef ref="errorlogger" level="error"/>
+		</root>
+		<!-- <Root level="info"> <AppenderRef ref="Console"/> </Root> -->
+	</Loggers>
+</Configuration>
